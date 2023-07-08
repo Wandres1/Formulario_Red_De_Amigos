@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="./static/css/styles.css">
+  <script src="./static/js/script.js" defer=""></script>
+</head>
+
+
+
+<body>
+  <div class="container">
+  <div class="banner">
+    <img src="./static/img/key visual 1.png" alt="Red de Amigos Banner">
+  </div>
+</div>
+  <div class="container">
+    <form action="#" method="post" id="formulario">
+      <h1>Formulario de Registro</h1>
+
+      <!-- Campos existentes -->
+      <label for="nombre">Nombres y Apellidos:</label><br>
+      <input type="text" id="nombre" name="nombre" required><br><br>
+
+      <label for="cedula">Cédula:</label><br>
+      <input type="text" id="cedula" name="cedula" required><br><br>
+
+      <label for="celular">Celular/Teléfono:</label><br>
+      <input type="tel" id="celular" name="celular" required><br><br>
+
+      <label for="correo">Correo electrónico:</label><br>
+      <input type="email" id="correo" name="correo" required><br><br>
+
+      <label for="departamento">Departamento en el cual se encuentra ubicado:</label><br>
+      <select id="departamento" name="departamento" onchange="actualizarCiudades()" required>
+        <option value="">Seleccione un departamento</option>
+        <option value="Amazonas">Amazonas</option>
+        <option value="Antioquia">Antioquia</option>
+        <option value="Arauca">Arauca</option>
+        <option value="Atlantico">Atlantico</option>
+        <option value="Bolivar">Bolivar</option>
+        <option value="Boyaca">Boyacá</option>
+        <option value="Caldas">Caldas</option>
+        <option value="Caqueta">Caqueta</option>
+        <option value="Casanare">Casanare</option>
+        <option value="Cauca">Cauca</option>
+        <option value="Cesar">Cesar</option>
+        <option value="Cordoba">Cordoba</option>
+        <option value="Cundinamarca">Cundinamarca</option>
+        <option value="Guainia">Guainia</option>
+        <option value="Guajira">Guajira</option>
+        <option value="Guaviare">Guaviare</option>
+        <option value="Huila">Huila</option>
+        <option value="Magdalena">Magdalena</option>
+        <option value="Meta">Meta</option>
+        <option value="Narino">Nariño</option>
+        <option value="NorteDeSantander">Norte De Santander</option>
+        <option value="Putumayo">Putumayo</option>
+        <option value="Quindio">Quindio</option>
+        <option value="Risaralda">Risaralda</option>
+        <option value="SanAndres">San Andres y Providencia</option>
+        <option value="Santander">Santander</option>
+        <option value="Sucre">Sucre</option>
+        <option value="Tolima">Tolima</option>
+        <option value="Valle">Valle del Cauca</option>
+        <option value="Vaupes">Vaupes</option>
+        <option value="Vichada">Vichada</option>
+      </select><br><br>
+
+      <label for="ciudad">Ciudad:</label><br>
+      <select id="ciudad" name="ciudad" required>
+        <option value="">Seleccione una ciudad</option>
+      </select><br><br>
+
+            <label for="fecha">Fecha en la que se realizaron las transacciones:</label><br>
+      <input type="date" id="fecha" name="fecha" required><br><br>
+
+      
+      <div id="transacciones-container">
+
+        <label for="transacciones">Código de aprobación de la transacción:</label><br>
+        <img src="./static/img/codigo 2.png" alt="Imagen de ejemplo" class="transacciones-image">
+        <div class="transaccion-item">
+          <input type="number" name="transacciones[]" min="0"  required>
+          <button type="button" onclick="eliminarTransaccion(this)">Eliminar</button>
+        </div>
+      </div>
+      
+
+
+      <div class="button-container">
+        <button type="button" onclick="agregarTransaccion()">Agregar Transacción</button>
+
+      </div>
+      <!-- Cambiar el enlace de href para redirigir a los terminos y condiciones correspondientes--> 
+      <div class="terms">
+        <input type="checkbox" id="terms-checkbox" required>
+        <label for="terms-checkbox">
+          Acepto los
+          <a href="formulario.html">Términos y Condiciones</a>
+        </label>
+      </div>
+      <div class="button-container">
+        <input type="submit" value="Enviar">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
